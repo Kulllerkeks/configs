@@ -1,0 +1,16 @@
+micro
+exa
+tldr
+fish
+mc
+code
+fzf
+gnome-shell-extensions
+alacritty
+kicad
+freecad
+discord
+teamspeak3
+spotify-launcher
+inkscape
+btop

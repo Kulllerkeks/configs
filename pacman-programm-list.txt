@@ -14,3 +14,4 @@ teamspeak3
 spotify-launcher
 inkscape
 btop
+starship

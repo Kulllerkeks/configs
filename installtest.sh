@@ -27,14 +27,11 @@ makepkg --syncdeps --install --needed --noconfirm
 echo "-----------------------------------------------"
 cd ~
 
-
 echo "-----------------------------------------------"
 echo "downloading themes"
 # download themes
 # gedit
 # alacritty
-# starship
-# 
 
 echo "-----------------------------------------------"
 echo "moving configs"
@@ -42,6 +39,15 @@ echo "moving configs"
 
 #configs to move
 #fish
+yes | cp configs/fish/config.fish ~/.config/fish/config.fish
 #pacman
 #alacritty
 
+# starship
+yes | cp configs/starship/starship.toml ~/.config/starship.toml
+# micro settings
+yes | cp configs/micro/settings.json ~/.config/micro/settings.json
+
+echo "-----------------------------------------------"
+echo "setting default shell"
+chsh -s $(which fish)

@@ -63,7 +63,7 @@ yes | cp configs/mc/ini ~/.config/mc/ini
 
 echo "-----------------------------------------------"
 echo "installing programs from the aur"
-yay --save --answerclean All --answerdiff None
+yay --save --answerclean All --answerdiff None --noprovides --batchinstall --clean --removemake
 yay -S - < yay-programm-list.txt
 echo "-----------------------------------------------"
 echo "finished!"

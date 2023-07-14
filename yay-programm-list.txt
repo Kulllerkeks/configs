@@ -1,0 +1,5 @@
+heroic-games-launcher
+timeshift-bin
+pfetch-rs
+gradience-git
+protonup-rs

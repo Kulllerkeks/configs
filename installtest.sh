@@ -1,5 +1,9 @@
 #!/bin/bash
 echo "beginning installation..."
+echo "moving pacman config"
+yes | sudo cp configs/pacman/pacman.conf /etc/pacman.conf
+sudo pacman -Syy
+sudo pacman -Syu
 echo "-----------------------------------------------"
 echo "installing git and base-devel"
 sudo pacman -S --needed --noconfirm git base-devel
@@ -46,16 +50,20 @@ echo "moving configs"
 
 #fish
 yes | cp configs/fish/config.fish ~/.config/fish/config.fish
-#pacman
-yes | sudo cp configs/pacman/pacman.conf /etc/pacman.conf
 # btop
 yes | cp configs/btop/btop.conf ~/.config/btop/btop.conf
 #alacritty
 yes | cp configs/alacritty/alacritty.yml~/.config/alacritty/alacritty.yml
-
 # starship
 yes | cp configs/starship/starship.toml ~/.config/starship.toml
 # micro settings
 yes | cp configs/micro/settings.json ~/.config/micro/settings.json
 # midnigt commander
 yes | cp configs/mc/ini ~/.config/mc/ini
+
+echo "-----------------------------------------------"
+echo "installing programs from the aur"
+yay --save --answerclean All --answerdiff None
+yay -S - < yay-programm-list.txt
+echo "-----------------------------------------------"
+echo "finished!"

@@ -37,7 +37,6 @@ echo "-----------------------------------------------"
 echo "moving configs"
 #move all configs to the right directory
 
-#configs to move
 #fish
 yes | cp configs/fish/config.fish ~/.config/fish/config.fish
 #pacman

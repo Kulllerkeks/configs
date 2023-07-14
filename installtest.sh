@@ -43,19 +43,28 @@ mkdir themes
 cd themes
 # download themes
 # gedit
-
-
 cd ..
 echo "-----------------------------------------------"
 echo "moving configs"
 #move all configs to the right directory
+workingdir=$(pwd)
+cd ~/.config
 
+mkdir fish
+mkdir btop
+mkdir alacritty
+mkdir starship
+mkdir micro
+mkdir mc
+
+cd "$workingdir"
 #fish
 yes | cp configs/fish/config.fish ~/.config/fish/config.fish
 # btop
 yes | cp configs/btop/btop.conf ~/.config/btop/btop.conf
 #alacritty
-yes | cp configs/alacritty/alacritty.yml~/.config/alacritty/alacritty.yml
+
+yes | cp configs/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 # starship
 yes | cp configs/starship/starship.toml ~/.config/starship.toml
 # micro settings

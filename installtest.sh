@@ -43,6 +43,10 @@ mkdir themes
 cd themes
 # download themes
 # gedit
+echo "Extracting grub theme..."
+tar -xvf themes/grub/Vimix1080p.tar.xz -C themes/grub/
+cd Vimix1080p/Vimix-1080p
+./install.sh
 
 echo "Extracting Papirus-Palebrown..."
 tar -xvf /themes/icons/Papirus-palebrown.tar.xz -C /usr/share/icons/Papirus-Palebrown

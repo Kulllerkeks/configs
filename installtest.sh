@@ -26,3 +26,22 @@ cd yay-bin
 makepkg --syncdeps --install --needed --noconfirm
 echo "-----------------------------------------------"
 cd ~
+
+
+echo "-----------------------------------------------"
+echo "downloading themes"
+# download themes
+# gedit
+# alacritty
+# starship
+# 
+
+echo "-----------------------------------------------"
+echo "moving configs"
+#move all configs to the right directory
+
+#configs to move
+#fish
+#pacman
+#alacritty
+

@@ -1,5 +1,4 @@
 #!/bin/bash
-cd ~
 echo "beginning installation..."
 echo "-----------------------------------------------"
 echo "installing git and base-devel"
@@ -20,18 +19,21 @@ sudo pacman -S --noconfirm - < pacman-programm-list.txt
 # install yay
 echo "-----------------------------------------------"
 echo "installing yay"
-cd ~
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg --syncdeps --install --needed --noconfirm
 echo "-----------------------------------------------"
-cd ~
+cd ..
 
 echo "-----------------------------------------------"
 echo "downloading themes"
+
+mkdir themes
+cd themes
 # download themes
 # gedit
 # alacritty
+#git clone https://github.com/dracula/alacritty.git
 
 echo "-----------------------------------------------"
 echo "moving configs"
@@ -46,6 +48,8 @@ yes | cp configs/fish/config.fish ~/.config/fish/config.fish
 yes | cp configs/starship/starship.toml ~/.config/starship.toml
 # micro settings
 yes | cp configs/micro/settings.json ~/.config/micro/settings.json
+# midnigt commander
+yes | cp configs/mc/ini ~/.config/mc/ini
 
 echo "-----------------------------------------------"
 echo "setting default shell"

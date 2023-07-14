@@ -44,6 +44,8 @@ cd themes
 # download themes
 # gedit
 
+
+cd ..
 echo "-----------------------------------------------"
 echo "moving configs"
 #move all configs to the right directory
@@ -63,7 +65,8 @@ yes | cp configs/mc/ini ~/.config/mc/ini
 
 echo "-----------------------------------------------"
 echo "installing programs from the aur"
-yay --save --answerclean All --answerdiff None --noprovides --batchinstall --clean --removemake
-yay -S - < yay-programm-list.txt
+yay --save --answerclean All --answerdiff None --noprovides --batchinstall --removemake
+yay -S --noprovides --batchinstall --removemake - < yay-programm-list.txt
+yay --save --answerclean All --answerdiff None --provides --nobatchinstall --removemake
 echo "-----------------------------------------------"
 echo "finished!"

@@ -67,6 +67,6 @@ echo "-----------------------------------------------"
 echo "installing programs from the aur"
 yay --save --answerclean All --answerdiff None --noprovides --batchinstall --removemake
 yay -S --noprovides --batchinstall --removemake - < yay-programm-list.txt
-yay --save --answerclean All --answerdiff None --provides --nobatchinstall --removemake
+yay --save --answerclean All --answerdiff None --provides --nobatchinstall
 echo "-----------------------------------------------"
 echo "finished!"

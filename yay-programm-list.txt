@@ -3,3 +3,5 @@ timeshift-bin
 pfetch-rs
 gradience-git
 protonup-rs
+gnome-shell-extension-dash-to-dock
+brave

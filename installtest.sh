@@ -4,6 +4,9 @@ echo "-----------------------------------------------"
 echo "installing git and base-devel"
 sudo pacman -S --needed --noconfirm git base-devel
 echo "-----------------------------------------------"
+echo "installing additional packages for lutris "
+sudo pacman -S --noconfirm wine winetricks wine-mono wine_gecko vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d gvfs
+echo "-----------------------------------------------"
 echo "loading programms from list:"
 programmlist=$(cat pacman-programm-list.txt) 
 programmlist=${programmlist//$'\n'}
@@ -18,12 +21,16 @@ sudo pacman -S --noconfirm - < pacman-programm-list.txt
 
 # install yay
 echo "-----------------------------------------------"
-echo "installing yay"
+echo "installing yay-bin"
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg --syncdeps --install --needed --noconfirm
 echo "-----------------------------------------------"
 cd ..
+
+echo "-----------------------------------------------"
+echo "setting default shell"
+chsh -s $(which fish)
 
 echo "-----------------------------------------------"
 echo "downloading themes"
@@ -32,8 +39,6 @@ mkdir themes
 cd themes
 # download themes
 # gedit
-# alacritty
-#git clone https://github.com/dracula/alacritty.git
 
 echo "-----------------------------------------------"
 echo "moving configs"
@@ -42,7 +47,11 @@ echo "moving configs"
 #fish
 yes | cp configs/fish/config.fish ~/.config/fish/config.fish
 #pacman
+yes | sudo cp configs/pacman/pacman.conf /etc/pacman.conf
+# btop
+yes | cp configs/btop/btop.conf ~/.config/btop/btop.conf
 #alacritty
+yes | cp configs/alacritty/alacritty.yml~/.config/alacritty/alacritty.yml
 
 # starship
 yes | cp configs/starship/starship.toml ~/.config/starship.toml
@@ -50,7 +59,3 @@ yes | cp configs/starship/starship.toml ~/.config/starship.toml
 yes | cp configs/micro/settings.json ~/.config/micro/settings.json
 # midnigt commander
 yes | cp configs/mc/ini ~/.config/mc/ini
-
-echo "-----------------------------------------------"
-echo "setting default shell"
-chsh -s $(which fish)

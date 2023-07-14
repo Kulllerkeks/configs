@@ -16,3 +16,4 @@ inkscape
 btop
 starship
 steam
+lutris

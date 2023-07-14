@@ -43,6 +43,13 @@ mkdir themes
 cd themes
 # download themes
 # gedit
+
+echo "Extracting Papirus-Palebrown..."
+tar -xvf /themes/icons/Papirus-palebrown.tar.xz -C /usr/share/icons/Papirus-Palebrown
+
+echo "Extracting Papirus-Grey..."
+tar -xvf /themes/icons/Papirus-grey.tar.xz -C /usr/share/icons/Papirus-Grey
+
 cd ..
 echo "-----------------------------------------------"
 echo "moving configs"
